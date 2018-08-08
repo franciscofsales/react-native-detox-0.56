@@ -51,6 +51,12 @@
         "build": "xcodebuild -project ios/DetoxSetup.xcodeproj -scheme DetoxSetup -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 7"
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/app-debug.apk",
+        "build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
+        "type": "android.emulator",
+        "name": "Nexus_5X_API_28_x86"
       }
     },
     "runner-config": "e2e/config.json",
